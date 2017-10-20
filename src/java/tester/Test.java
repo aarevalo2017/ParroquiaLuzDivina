@@ -5,12 +5,19 @@
  */
 package tester;
 
+import dao.ErogantesDAO;
+import dto.ErogantesDTO;
+
 /**
  *
  * @author Alejandra Coello
  */
 public class Test {
     public static void main(String[] args) {
+        ErogantesDAO dao = new ErogantesDAO();
+        for (ErogantesDTO item : dao.readAll()) {
+            System.out.println(item.getNombre());
+        }
 //        Probamos los metodos creados
 //        ComunidadesDAO dao = new ComunidadesDAO();
 //        ComunidadesDTO comunidad = new ComunidadesDTO("1111", "ISAAC FALTO", 19);
